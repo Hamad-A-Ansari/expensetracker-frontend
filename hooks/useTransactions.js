@@ -4,20 +4,22 @@ import { Alert } from 'react-native';
 
 
 export const useTransactions = (userId) => {
-  const API_URL= 'http://localhost:5001/api/'
+  const API_URL= 'https://expensetracker-backend-zn1t.onrender.com/api'
 
   const [transactions, setTransactions] = useState([]);
   const [summary, setSummary] = useState({
     balance: 0,
     income: 0,
-    expense: 0
+    expenses: 0
   });
   const [isLoading, setIsLoading] = useState(true);
 
   
   const fetchTransactions = useCallback(async () => {
     try {
-      const response = await fetch(`${API_URL}/transactions/${userId}`);
+      const response = await fetch(`${API_URL}/transactions/${userId}`, {
+        method: 'GET'
+      });
       
       const data = await response.json();
       setTransactions(data);
@@ -28,8 +30,11 @@ export const useTransactions = (userId) => {
 
   const fetchSummary = useCallback(async () => {
     try {
-      const response = await fetch(`${API_URL}/transactions/summary/${userId}`);
+      const response = await fetch(`${API_URL}/transactions/summary/${userId}`, {
+        method: 'GET'
+      });
       
+
       const data = await response.json();
       setSummary(data);
     } catch (err) {
