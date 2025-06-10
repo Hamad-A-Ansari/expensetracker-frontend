@@ -134,7 +134,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 16,
-    paddingVertical: 10,
+    paddingVertical: 12,
     borderRadius: 20,
     borderWidth: 1,
     borderColor: COLORS.border,
@@ -150,6 +150,7 @@ export const styles = StyleSheet.create({
   categoryButtonText: {
     color: COLORS.text,
     fontSize: 14,
+    marginLeft: 8,
   },
   categoryButtonTextActive: {
     color: COLORS.white,

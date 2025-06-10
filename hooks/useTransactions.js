@@ -1,10 +1,10 @@
 //Custom hook for fetching transactions
 import { useCallback, useState } from 'react';
 import { Alert } from 'react-native';
+import { API_URL } from '../constants/api.js'; // Adjust the import path as necessary
 
 
 export const useTransactions = (userId) => {
-  const API_URL= 'https://expensetracker-backend-zn1t.onrender.com/api'
 
   const [transactions, setTransactions] = useState([]);
   const [summary, setSummary] = useState({

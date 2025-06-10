@@ -95,6 +95,7 @@ export default function SignUpScreen() {
           placeholder="Enter your verification code"
           placeholderTextColor= "#9A8478"
           onChangeText={(code) => setCode(code)}
+          keyboardType='numeric'
         />
         <TouchableOpacity onPress={onVerifyPress} style={styles.button}>
           <Text style={styles.buttonText}>Verify</Text>
